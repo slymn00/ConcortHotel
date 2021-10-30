@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="mini regression" verbose="1">
+    <test name="mini regression">
+
+        <packages>
+            <package name="tests.US_010_TestCases"></package>
+        </packages>
+
+
+    </test>
+</suite>

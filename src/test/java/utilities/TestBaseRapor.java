@@ -30,7 +30,7 @@ public abstract class TestBaseRapor {
         extentReports.setSystemInfo("Browser", ConfigReader.getProperty("browser")); // chrome, firefox
         extentReports.setSystemInfo("Automation Engineer", "Suleyman");
         extentHtmlReporter.config().setDocumentTitle("concort Hotel Tests");
-        extentHtmlReporter.config().setReportName("amazon Arama Automation Reports");
+        extentHtmlReporter.config().setReportName("Concort Hotel Tests");
     }
 
     // Her test methodundan sonra eğer testte hata varsa, ekran görüntüsü alıp rapora ekliyor
