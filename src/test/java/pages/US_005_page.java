@@ -104,5 +104,12 @@ public class US_005_page {
         us_005_page.password.sendKeys(ConfigReader.getProperty("US05_Password"));
         us_005_page.loginAccount.click();
     }
+    public void ConcortGecersizHotelLogin(){
+        US_005_page us_005_page=new US_005_page();
+        us_005_page.loginMenu.click();
+        us_005_page.username.sendKeys(ConfigReader.getProperty("US05_gecersizUserName"));
+        us_005_page.password.sendKeys(ConfigReader.getProperty("US05_gecersizPassword"));
+        us_005_page.loginAccount.click();
+    }
 
 }
