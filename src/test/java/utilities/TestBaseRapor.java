@@ -21,7 +21,7 @@ public abstract class TestBaseRapor {
         extentReports = new ExtentReports();
         //rapor oluştuktan sonra raporunuz nereye eklensin istiyorsanız buraya yazıyorsunuz.
 
-        String filePath = System.getProperty("user.dir") + "/test-output/US05_TC01_Rapor.html";
+        String filePath = System.getProperty("user.dir") + "/test-output/US09_TC04_Rapor.html";
 
      
 
@@ -32,7 +32,7 @@ public abstract class TestBaseRapor {
         // İstediğiniz bilgileri buraya ekeyebiliyorsunuz.
         extentReports.setSystemInfo("Enviroment","QA");
         extentReports.setSystemInfo("Browser", ConfigReader.getProperty("browser")); // chrome, firefox
-        extentReports.setSystemInfo("Automation Engineer", "Suleyman");
+        extentReports.setSystemInfo("Automation Engineer", "Muhammet Y.");
         extentHtmlReporter.config().setDocumentTitle("concort Hotel Tests");
         extentHtmlReporter.config().setReportName("Concort Hotel Tests");
     }
