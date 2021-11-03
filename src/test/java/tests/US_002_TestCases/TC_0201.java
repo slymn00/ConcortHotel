@@ -4,7 +4,6 @@ import com.aventstack.extentreports.ExtentTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.US_002_page;
-import utilities.Driver;
 import utilities.TestBaseRapor;
 
 public class TC_0201 extends TestBaseRapor {
