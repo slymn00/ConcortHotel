@@ -1,5 +1,4 @@
 package E2E_Tests;
-
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
@@ -9,7 +8,6 @@ import pages.LogIn_Page;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.TestBaseRapor;
-
 public class E2E_CreateHotel extends TestBaseRapor {
 
     @Test(groups = "e2e")
