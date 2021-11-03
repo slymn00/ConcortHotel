@@ -20,7 +20,7 @@ public abstract class TestBaseRapor {
         //rapor oluştuktan sonra raporunuz nereye eklensin istiyorsanız buraya yazıyorsunuz.
 
 
-        String filePath = System.getProperty("user.dir") + "test-output/TC_0201_Rapor.html";
+        String filePath = System.getProperty("user.dir") + "test-output/US02_TC01_Rapor.html";
 
         //oluşturmak istediğimiz raporu (html formatında) başlatıyoruz, filePath ile dosya yolunu belirliyoruz.
         extentHtmlReporter = new ExtentHtmlReporter(filePath);
