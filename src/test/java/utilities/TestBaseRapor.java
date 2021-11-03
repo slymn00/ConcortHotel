@@ -1,13 +1,14 @@
 package utilities;
+
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import java.io.IOException;
+
 public abstract class TestBaseRapor {
     protected static ExtentReports extentReports; //extent report'a ilk atamayi yapar
     protected static ExtentTest extentTest; // test pass veya failed gibi bilgileri kaydeder. Ayrica ekran resmi icin de kullaniriz
@@ -17,12 +18,9 @@ public abstract class TestBaseRapor {
     public void setUpTest() {
         extentReports = new ExtentReports();
         //rapor oluştuktan sonra raporunuz nereye eklensin istiyorsanız buraya yazıyorsunuz.
-<<<<<<< HEAD
 
-        String filePath = System.getProperty("user.dir") + "/test-output/US09_TC04_Rapor.html";
-=======
-        String filePath = System.getProperty("user.dir") + "/test-output/US05_TC01_Rapor.html";
->>>>>>> 15c890056a648e4626cb462e0482194e8c577fe1
+
+        String filePath = System.getProperty("user.dir") + "/Reports/TC_0201_Rapor.html";
 
         //oluşturmak istediğimiz raporu (html formatında) başlatıyoruz, filePath ile dosya yolunu belirliyoruz.
         extentHtmlReporter = new ExtentHtmlReporter(filePath);
@@ -30,12 +28,10 @@ public abstract class TestBaseRapor {
         // İstediğiniz bilgileri buraya ekeyebiliyorsunuz.
         extentReports.setSystemInfo("Enviroment","QA");
         extentReports.setSystemInfo("Browser", ConfigReader.getProperty("browser")); // chrome, firefox
-<<<<<<< HEAD
-        extentReports.setSystemInfo("Automation Engineer", "Muhammet Y.");
-=======
-        extentReports.setSystemInfo("Automation Engineer", "Huseyin");
->>>>>>> 15c890056a648e4626cb462e0482194e8c577fe1
-        extentHtmlReporter.config().setDocumentTitle("concort Hotel Tests");
+
+        extentReports.setSystemInfo("Automation Engineer", "Ferhan");
+
+        extentHtmlReporter.config().setDocumentTitle("Concort Hotel Tests");
         extentHtmlReporter.config().setReportName("Concort Hotel Tests");
     }
     // Her test methodundan sonra eğer testte hata varsa, ekran görüntüsü alıp rapora ekliyor
@@ -51,6 +47,7 @@ public abstract class TestBaseRapor {
         }
         Driver.closeDriver();
     }
+
     // Raporlandırmayı sonlandırmak icin
     @AfterTest(alwaysRun = true)
     public void tearDownTest() {
