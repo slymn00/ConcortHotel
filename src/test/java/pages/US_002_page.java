@@ -42,4 +42,16 @@ public class US_002_page {
         us_002_page.password.sendKeys(ConfigReader.getProperty("CHValidPassword"));
         us_002_page.loginAccount.click();
     }
+
+    public void concortHotelWrongLogin() {
+
+        Driver.getDriver().get(ConfigReader.getProperty("CHURL"));
+
+        US_002_page us_002_page = new US_002_page();
+        us_002_page.loginMenu.click();
+        us_002_page.username.sendKeys(ConfigReader.getProperty("CHInvalidUsername"));
+        us_002_page.password.sendKeys(ConfigReader.getProperty("CHInvalidPassword"));
+        us_002_page.loginAccount.click();
+
+    }
 }
