@@ -1,5 +1,6 @@
 package tests.US_001_TestCases;
 
+import com.github.javafaker.Faker;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
@@ -62,6 +63,7 @@ public void loginYazisiButonuGorunur(){
 
         Assert.assertTrue(us_001_page.loginYazisiButonu.isDisplayed());
         us_001_page.loginYazisiButonu.click();
+
     }
 
 @AfterClass

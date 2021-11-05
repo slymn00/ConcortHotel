@@ -15,7 +15,7 @@ import utilities.Driver;
 public class TC_0102 {
     US_001_page us_001_page= new US_001_page(Driver.getDriver());
     @Test(priority = 1)
-    public void titleHome(){
+    public void concortHotelSayfasi(){
         //kullanici concort Hotel sayfasina gider
         //expexted:title da home tusu gorunmeli
         Driver.getDriver().get(ConfigReader.getProperty("US01ConcortHotel"));

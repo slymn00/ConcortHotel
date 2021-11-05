@@ -24,7 +24,7 @@ private void test(){
 
 }
     @Test(priority = 1)
-    public void kullaniciSayfasi() {
+    public void concortHotelSayfasi() {
      //1- kullanici Concort Hotel sayfasina gider
      //expected Result= Rooms butonu gorunur
 
