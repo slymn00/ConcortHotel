@@ -17,12 +17,9 @@ public abstract class TestBaseRapor {
     public void setUpTest() {
         extentReports = new ExtentReports();
         //rapor oluştuktan sonra raporunuz nereye eklensin istiyorsanız buraya yazıyorsunuz.
-<<<<<<< HEAD
 
-        String filePath = System.getProperty("user.dir") + "/test-output/US09_TC04_Rapor.html";
-=======
-        String filePath = System.getProperty("user.dir") + "/test-output/US05_TC01_Rapor.html";
->>>>>>> 15c890056a648e4626cb462e0482194e8c577fe1
+
+        String filePath = System.getProperty("user.dir") + "/test-output/US09_TC05_Rapor.html";
 
         //oluşturmak istediğimiz raporu (html formatında) başlatıyoruz, filePath ile dosya yolunu belirliyoruz.
         extentHtmlReporter = new ExtentHtmlReporter(filePath);
@@ -30,17 +27,16 @@ public abstract class TestBaseRapor {
         // İstediğiniz bilgileri buraya ekeyebiliyorsunuz.
         extentReports.setSystemInfo("Enviroment","QA");
         extentReports.setSystemInfo("Browser", ConfigReader.getProperty("browser")); // chrome, firefox
-<<<<<<< HEAD
+
         extentReports.setSystemInfo("Automation Engineer", "Muhammet Y.");
-=======
-        extentReports.setSystemInfo("Automation Engineer", "Huseyin");
->>>>>>> 15c890056a648e4626cb462e0482194e8c577fe1
+
         extentHtmlReporter.config().setDocumentTitle("concort Hotel Tests");
         extentHtmlReporter.config().setReportName("Concort Hotel Tests");
     }
     // Her test methodundan sonra eğer testte hata varsa, ekran görüntüsü alıp rapora ekliyor
-    @AfterClass(alwaysRun = true)
+    @AfterMethod(alwaysRun = true)
     public void tearDownMethod(ITestResult result) throws IOException {
+
         if (result.getStatus() == ITestResult.FAILURE) { // eğer testin sonucu başarısızsa
             String screenshotLocation = ReusableMethods.getScreenshot(result.getName());
             extentTest.fail(result.getName());
@@ -51,6 +47,8 @@ public abstract class TestBaseRapor {
         }
         Driver.closeDriver();
     }
+
+
     // Raporlandırmayı sonlandırmak icin
     @AfterTest(alwaysRun = true)
     public void tearDownTest() {
