@@ -1,4 +1,5 @@
 package utilities;
+
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
@@ -8,6 +9,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import java.io.IOException;
+
 public abstract class TestBaseRapor {
     protected static ExtentReports extentReports; //extent report'a ilk atamayi yapar
     protected static ExtentTest extentTest; // test pass veya failed gibi bilgileri kaydeder. Ayrica ekran resmi icin de kullaniriz
@@ -19,7 +21,13 @@ public abstract class TestBaseRapor {
         //rapor oluştuktan sonra raporunuz nereye eklensin istiyorsanız buraya yazıyorsunuz.
 
 
+
         String filePath = System.getProperty("user.dir") + "/test-output/US09_TC05_Rapor.html";
+
+
+       // String filePath = System.getProperty("user.dir") + "test-output/US02_TC02_Rapor.html";
+
+
 
         //oluşturmak istediğimiz raporu (html formatında) başlatıyoruz, filePath ile dosya yolunu belirliyoruz.
         extentHtmlReporter = new ExtentHtmlReporter(filePath);
@@ -28,9 +36,20 @@ public abstract class TestBaseRapor {
         extentReports.setSystemInfo("Enviroment","QA");
         extentReports.setSystemInfo("Browser", ConfigReader.getProperty("browser")); // chrome, firefox
 
+
         extentReports.setSystemInfo("Automation Engineer", "Muhammet Y.");
 
+
+       //extentReports.setSystemInfo("Automation Engineer", "gokhan");
+
+
+
         extentHtmlReporter.config().setDocumentTitle("concort Hotel Tests");
+
+        //extentReports.setSystemInfo("Automation Engineer", "Ferhan");
+
+        //extentHtmlReporter.config().setDocumentTitle("Concort Hotel Tests");
+
         extentHtmlReporter.config().setReportName("Concort Hotel Tests");
     }
     // Her test methodundan sonra eğer testte hata varsa, ekran görüntüsü alıp rapora ekliyor
@@ -47,7 +66,6 @@ public abstract class TestBaseRapor {
         }
         Driver.closeDriver();
     }
-
 
     // Raporlandırmayı sonlandırmak icin
     @AfterTest(alwaysRun = true)
