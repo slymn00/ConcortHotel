@@ -1,4 +1,39 @@
 package tests.US_003_TestCases;
 
-public class TC_0301 {
+import org.testng.Assert;
+import org.testng.annotations.Test;
+import pages.US_003_page;
+import utilities.ConfigReader;
+import utilities.Driver;
+import utilities.TestBaseRapor;
+
+public class TC_0301  extends TestBaseRapor {
+
+    @Test
+    public void logIn() throws InterruptedException {
+
+        // 1- kullanici Concort Hotel sayfasina gidebilmeli
+        Driver.getDriver().get(ConfigReader.getProperty("US03ConcortHotel"));
+
+        //  US_009QAConcortPage sayfasindan Obje olusturmaliyiz
+        US_003_page us_003_page=new US_003_page();
+
+        //2-Kullanici "Concort Hotel" yazisi görülebilmeli
+        Assert.assertTrue(us_003_page.concortHotelYazisi.isDisplayed(),"Concort Hotel yazisi gorulmedi");
+
+        //3-Kullanici " log in" yazisi görebilmeli
+        Assert.assertTrue(us_003_page.loginYazisiButonu.isDisplayed(),"Log in yazisi gorulmedi");
+
+        //4-Kullanici "log in" butonuna tiklayabilmeli
+        us_003_page.loginYazisiButonu.click();
+
+
+    }
+
+
+
+
+
+
+
 }
