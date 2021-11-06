@@ -16,7 +16,7 @@ public class TC_0705 extends TestBaseRapor {
     @Test
     public void hotelRoomDeleteTest(){
         US_007_page us_007_page = new US_007_page();
-        extentTest=extentReports.createTest("Detail Test","Hotel Room listesinden Odanın detail kismina gidilmesi testi");
+        extentTest=extentReports.createTest("TC_705_HotelRoomDeleteTest","Secilen Hotel Room delete edilmeli");
         us_007_page.login();
         extentTest.info("admin olarak login edildi");
         Assert.assertEquals(Driver.getDriver().getTitle(), ConfigReader.getProperty("US_007_AdminPAgeTitleText"), "Admin sayfasi gozukmedi");

@@ -22,7 +22,7 @@ public class TC_0704 extends TestBaseRapor {
     @Test
     public void saveHotelRoomDataTest(){
         US_007_page us_007_page = new US_007_page();
-        extentTest=extentReports.createTest("Detail Test","Hotel Room listesinden Odanın detail kismina gidilmesi testi");
+        extentTest=extentReports.createTest("TC_703_SaveHoteRoomTest","guncelenen hotel room datalari save edilmneli");
         us_007_page.login();
         extentTest.info("admin olarak login edildi");
         Assert.assertEquals(Driver.getDriver().getTitle(), ConfigReader.getProperty("US_007_AdminPAgeTitleText"), "Admin sayfasi gozukmedi");
