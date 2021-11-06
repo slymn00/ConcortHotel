@@ -103,6 +103,18 @@ public class US_009_page {
     @FindBy(xpath = "//a[@href='/admin/RoomReservationAdmin']")
     public WebElement roomReservationLinki;
 
+    @FindBy(xpath = "(//a[@class='btn btn-xs default'])[1]")
+    public WebElement roomReservationDetailsLinki;
+
+    @FindBy(id = "ContactNameSurname")
+    public WebElement roomReservationDetailsContactSurnameKutusu;
+
+    @FindBy(id = "Notes")
+    public WebElement roomReservationDetailsNotesKutusu;
+
+    @FindBy(xpath = "//button[@class='btn green']")
+    public WebElement roomReservationDetailsDegistirSaveButonu;
+
 
     public void ConcortHotelLogin(){
         Driver.getDriver().get(ConfigReader.getProperty("US09_ConcortHotelUrl"));
