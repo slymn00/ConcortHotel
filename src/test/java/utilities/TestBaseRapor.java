@@ -33,11 +33,11 @@ public abstract class TestBaseRapor {
         extentReports.setSystemInfo("Browser", ConfigReader.getProperty("browser")); // chrome, firefox
 
 
-        extentReports.setSystemInfo("Automation Engineer", "Cagatay");
+       // extentReports.setSystemInfo("Automation Engineer", "Cagatay");
 
 
 
-        extentReports.setSystemInfo("Automation Engineer", "Muhammet Y.");
+      //  extentReports.setSystemInfo("Automation Engineer", "Muhammet Y.");
 
 
        //extentReports.setSystemInfo("Automation Engineer", "gokhan");
