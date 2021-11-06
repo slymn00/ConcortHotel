@@ -43,4 +43,11 @@ public WebElement kingRoomsButonu;
 
 @FindBy(xpath = "//h2[@class='mb-4']")
 public WebElement kingRoomsYazisiGorundu;
+
+@FindBy(xpath ="(//p[@class='pt-1'])[2]")
+    public WebElement ikinciRoomsbutonu;
+@FindBy(xpath = "(//span[@class='price mr-2'])[2]")
+    public WebElement fiyatBilgisi;
+@FindBy(linkText = "Log in")
+    public WebElement loginYazisiButonu;
 }
