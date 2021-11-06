@@ -25,83 +25,26 @@ public class US_009_page {
     @FindBy(id = "btnSubmit")
     public WebElement loginButonu;
 
-    @FindBy(xpath = "//span[@class='caption-subject font-green-sharp bold uppercase']")
-    public WebElement basariliGirisYazisiElementi;
-
-    @FindBy (xpath = "//*[.='Try again please']")
-    public WebElement basarisizGirisYazisiElementi;
-
     @FindBy(xpath = "//span[text()='Hotel Management']")
     public WebElement hotelManagementLinki;
 
-    @FindBy(partialLinkText = "Hotel List")
-    public WebElement hotelListLink;
-
-    @FindBy(xpath = "//span[text()='Add Hotel ']")
-    public WebElement addHotelLink;
-
-    @FindBy(id="Code")
-    public WebElement addHotelCodeKutusu;
-
-    @FindBy(id="IDGroup")
-    public WebElement addHotelDropdown;
-
-    @FindBy(id="btnSubmit")
-    public WebElement addHotelSave;
-
-    @FindBy(xpath="//div[@class='bootbox-body']")
-    public WebElement addHotelSuccesfullYazisi;
-
-    @FindBy(xpath="//button[@class='btn btn-primary']")
-    public WebElement addHotelAllertOk;
-
-    @FindBy (partialLinkText = "Hotel Rooms")
-    public WebElement hotelRoomsLinki;
-
-    @FindBy (xpath = "//span[text()='Add Hotelroom ']")
-    public WebElement addHotelRoomButonu;
-
-    @FindBy (id="IDHotel")
-    public WebElement addRoomIdDropDown;
-
-    @FindBy (id="IDGroupRoomType")
-    public WebElement addRoomType;
-
-    @FindBy (id="btnSubmit")
-    public WebElement addRoomSaveButonu;
-
-    @FindBy (xpath = "//div[@class='bootbox-body']")
-    public WebElement addRoomSuccessfulYazisi;
-
-    @FindBy (xpath = "//button[@class='btn btn-primary']")
-    public WebElement addRoomAlertOkButonu;
-
-    @FindBy (linkText = "Hotelrooms")
-    public WebElement addRoomHotelRoomsLinki;
-
-    @FindBy (xpath = "//span[text()='List Of Hotelrooms']")
-    public WebElement addRoomHotelRoomListYazisi;
-
-    @FindBy(xpath = "//thead/tr[1]/th") // burada Web elementlerden olusan bir List imiz var bu yuzden List yaptik
-    public List<WebElement> basliklarListesi;
-
-    @FindBy(xpath = "//tbody")
-    public WebElement tBodyTumu;
-
-    @FindBy(xpath = "//tbody//tr")
-    public List<WebElement> satirlarListesi;
-
-    @FindBy(xpath = "//tbody//tr[1]") // buradaki tr satirlari ifade eder
-    public WebElement birinciSatir;
-
-    @FindBy(xpath = "//tbody//tr//td[4]") // buradaki td sutunlari ifade eder
-    public List<WebElement> dorduncuSutunListesi;
-
-    @FindBy(xpath = "//tbody//tr//td")
-    public List<WebElement> hucrelerListesi;
-
     @FindBy(xpath = "//a[@href='/admin/RoomReservationAdmin']")
     public WebElement roomReservationLinki;
+
+    @FindBy(xpath = "(//a[@class='btn btn-xs default'])[1]")
+    public WebElement roomReservationDetailsLinki;
+
+    @FindBy(id = "ContactNameSurname")
+    public WebElement roomReservationDetailsContactSurnameKutusu;
+
+    @FindBy(id = "Notes")
+    public WebElement roomReservationDetailsNotesKutusu;
+
+    @FindBy(xpath = "//button[@class='btn green']")
+    public WebElement roomReservationDetailsDegistirSaveButonu;
+
+    @FindBy(id = "btnDelete")
+    public WebElement roomReservationDetailsDegistirDeleteButonu;
 
 
     public void ConcortHotelLogin(){
