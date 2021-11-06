@@ -19,7 +19,7 @@ public class TC_0505 extends TestBaseRapor {
         //3-title da list of hotels gorulmeli
         //4-details butonuna tiklamali
         //5-delete butonuna tiklamali
-        //6-hotelin silindigini gormeli
+        //6-hotelin silindigini gormeli  adana
         Actions actions=new Actions(Driver.getDriver());
         US_005_page us_005_page =new US_005_page();
        extentTest=extentReports.createTest("otel bilgileri guncellenebilir olmali");
