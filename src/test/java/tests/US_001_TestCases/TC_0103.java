@@ -63,11 +63,7 @@ public void loginYazisiButonuGorunur(){
 
         Assert.assertTrue(us_001_page.loginYazisiButonu.isDisplayed());
         us_001_page.loginYazisiButonu.click();
+Driver.closeDriver();
+    }}
 
-    }
 
-@AfterClass
-    public void TeatDown(){
-        Driver.closeDriver();
-}
-}

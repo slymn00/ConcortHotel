@@ -80,10 +80,7 @@ Thread.sleep(6000);
        //Kullanici King Room yazisini gormeli
     //expected:Kullanici King Room yazisini gormeli
 us_001_page.kingRoomsYazisiGorundu.isDisplayed();
+Driver.closeDriver();
 }
-@AfterClass
-    public void TearDown(){
-        Driver.closeDriver();
 
-}
 }

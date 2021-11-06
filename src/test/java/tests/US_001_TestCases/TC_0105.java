@@ -15,19 +15,17 @@ import utilities.Driver;
 public class TC_0105 {
 
     US_001_page us_001_page= new US_001_page(Driver.getDriver());
-    @BeforeTest
-    private void test() {
-        Driver.getDriver().get(ConfigReader.getProperty("US01ConcortHotel"));
 
-    }
-@Test
+@Test(priority = 1)
     public void concortHotelSayfasi(){
     //kullanici concort Hotel sayfasina gider
     //expected:title concort icermeli
+    Driver.getDriver().get(ConfigReader.getProperty("US01ConcortHotel"));
+
     SoftAssert softAssert=new SoftAssert();
     softAssert.assertTrue(us_001_page.concortHotelButonu.getText().contains(ConfigReader.getProperty("US01TitleConcortYazisi")));
     }
-@Test
+@Test(priority = 2)
     public void contacButonu(){
 
         //kullanici contact sekmesine tiklar
@@ -37,7 +35,7 @@ public class TC_0105 {
     softAssert.assertTrue(Driver.getDriver().getCurrentUrl().contains("US01ContacButonuUrl"));
 
 }
-@Test
+@Test(priority = 3)
 public void textBoxlar(){
         //kullanici text Boxlari doldurur
     //expected: text boxlar doldurulabilmeli
@@ -57,14 +55,14 @@ public void textBoxlar(){
             .sendKeys("en kisa zamanda cevap donerseniz cok mutlu olurum!")
             .sendKeys(Keys.TAB).perform();
 }
-@Test
+@Test(priority = 4)
 public void sendMessageButonu(){
         //kullanici send Message butonuna tiklar
         //send Message butonu tiklanmali
 us_001_page.sendMessageButonu.click();
 SoftAssert softAssert=new SoftAssert();
 softAssert.assertTrue(us_001_page.sendMessageButonuHataYazisi.isDisplayed());
-
+Driver.closeDriver();
 }
 
 
@@ -74,10 +72,6 @@ softAssert.assertTrue(us_001_page.sendMessageButonuHataYazisi.isDisplayed());
 
 
 
-@AfterClass
-    public void tearDown(){
-        Driver.closeDriver();
-}
 
 
 

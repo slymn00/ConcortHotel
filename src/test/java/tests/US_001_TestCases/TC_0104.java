@@ -15,16 +15,15 @@ import javax.swing.*;
 
 public class TC_0104 {
     US_001_page us_001_page= new US_001_page(Driver.getDriver());
-    @BeforeTest
-    private void test() {
-        Driver.getDriver().get(ConfigReader.getProperty("US01ConcortHotel"));
 
-    }
+
     @Test(priority = 1)
     public void concortHotelSayfasi() {
         //1- kullanici Concort Hotel sayfasina gider
         //expected Result= Url de Concort Hotel yazisi gorunur
        // System.out.println(Driver.getDriver().getCurrentUrl());
+        Driver.getDriver().get(ConfigReader.getProperty("US01ConcortHotel"));
+
         SoftAssert softAssert=new SoftAssert();
 softAssert.assertTrue(Driver.getDriver().getCurrentUrl().contains("US01ConcortHotel"));
     }
@@ -66,10 +65,7 @@ us_001_page.InstagramYazisiIlkFotograf.click();
 Actions actions= new Actions(Driver.getDriver());
 
 actions.sendKeys(Keys.ESCAPE).perform();
-   }
+Driver.closeDriver();
+   }}
 
-@AfterClass
-    public void TearDown(){
-        Driver.closeDriver();
-}
-}
+
