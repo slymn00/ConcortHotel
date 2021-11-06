@@ -22,10 +22,14 @@ public abstract class TestBaseRapor {
 
 
 
+
+
+
         String filePath = System.getProperty("user.dir") + "/test-output/US09_TC05_Rapor.html";
 
 
        // String filePath = System.getProperty("user.dir") + "test-output/US02_TC02_Rapor.html";
+
 
 
 
@@ -35,6 +39,7 @@ public abstract class TestBaseRapor {
         // İstediğiniz bilgileri buraya ekeyebiliyorsunuz.
         extentReports.setSystemInfo("Enviroment","QA");
         extentReports.setSystemInfo("Browser", ConfigReader.getProperty("browser")); // chrome, firefox
+
 
         extentReports.setSystemInfo("Automation Engineer", "Cagatay");
 
@@ -47,6 +52,39 @@ public abstract class TestBaseRapor {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        extentReports.setSystemInfo("Automation Engineer", "Huseyin");
 
         extentHtmlReporter.config().setDocumentTitle("concort Hotel Tests");
 
@@ -68,7 +106,7 @@ public abstract class TestBaseRapor {
         } else if (result.getStatus() == ITestResult.SKIP) { // eğer test çalıştırılmadan geçilmezse
             extentTest.skip("Test Case is skipped: " + result.getName()); // Ignore olanlar
         }
-        Driver.closeDriver();
+       Driver.closeDriver();
     }
 
     // Raporlandırmayı sonlandırmak icin
