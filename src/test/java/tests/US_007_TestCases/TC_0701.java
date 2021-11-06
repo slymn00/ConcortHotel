@@ -22,27 +22,19 @@ public class TC_0701 extends TestBaseRapor {
     @Test
     public void hotelRoomTest() {
         US_007_page us_007_page = new US_007_page();
-
-        Driver.getDriver().get(ConfigReader.getProperty("US_007_MainPageUrl"));
-        Assert.assertEquals(Driver.getDriver().getTitle(), ConfigReader.getProperty("US_007_MainPageTitleText"), "Home Title yazisi cikmiyor ya da ana sayfa gozukmuyor");
-
-        us_007_page.loginBttn.click();
-        Assert.assertEquals(Driver.getDriver().getTitle(),ConfigReader.getProperty("US_007_LoginPageTitleText"),"Login page yazisi gelmedi ya da login page acilmadi");
-
-        us_007_page.usernameTextBox.sendKeys(ConfigReader.getProperty("US_007_AdminUsername"));
-        Assert.assertTrue(us_007_page.usernameTextBox.isEnabled(),"username yazilmiyor");
-
-        us_007_page.passwordTextBox.sendKeys(ConfigReader.getProperty("US_007_AdminPassword"));
-        Assert.assertTrue(us_007_page.passwordTextBox.isEnabled(),"password yazilmiyor");
-
-        us_007_page.loginPageLoginBttn.click();
-        Assert.assertEquals(Driver.getDriver().getTitle(), ConfigReader.getProperty("US_007_AdminPAgeTitleText"),"Admin sayfasi gozukmedi");
-
+        extentTest = extentReports.createTest("Hotel Room Test","Hotel Room Listesinin acilip acilmadigi test ediliyor");
+        us_007_page.login();
+        extentTest.info("admin olarak login edildi");
+        Assert.assertEquals(Driver.getDriver().getTitle(), ConfigReader.getProperty("US_007_AdminPAgeTitleText"), "Admin sayfasi gozukmedi");
+        extentTest.pass("admin sayfasi acildi");
         us_007_page.hotelManagementMenu.click();
+        extentTest.info("Hotel Management Menu tiklandi");
         Assert.assertTrue(us_007_page.hotelManagementSubMenu.isDisplayed(),"Hotel Management SubMenu acilmadi");
-
+        extentTest.pass("Hotel Management alt menuleri acildi");
         us_007_page.HotelRoomsBttn.click();
+        extentTest.info("Hotel Rooms tiklandi");
         Assert.assertTrue(us_007_page.listOfHotelRoomsTitleText.isDisplayed(),"List of Hotel Rooms gozukmuyor");
+        extentTest.pass("Hotel Room listesi gorunuyor");
         Driver.closeDriver();
     }
 }

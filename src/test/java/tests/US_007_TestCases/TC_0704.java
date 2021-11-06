@@ -22,20 +22,25 @@ public class TC_0704 extends TestBaseRapor {
     @Test
     public void saveHotelRoomDataTest(){
         US_007_page us_007_page = new US_007_page();
-        Faker faker = new Faker();
+        extentTest=extentReports.createTest("Detail Test","Hotel Room listesinden Odanın detail kismina gidilmesi testi");
         us_007_page.login();
+        extentTest.info("admin olarak login edildi");
         Assert.assertEquals(Driver.getDriver().getTitle(), ConfigReader.getProperty("US_007_AdminPAgeTitleText"), "Admin sayfasi gozukmedi");
         us_007_page.hotelManagementMenu.click();
-        ReusableMethods.waitFor(1);
-        us_007_page.hotelManagementSubMenu.click();
-        ReusableMethods.waitFor(1);
+        extentTest.info("Hotel Management Menu tiklandi");
         Assert.assertTrue(us_007_page.hotelManagementSubMenu.isDisplayed(),"Hotel Management SubMenu acilmadi");
+        extentTest.pass("Hotel Management alt menuleri acildi");
         us_007_page.HotelRoomsBttn.click();
+        extentTest.info("Hotel Rooms tiklandi");
         Assert.assertTrue(us_007_page.listOfHotelRoomsTitleText.isDisplayed(),"List of Hotel Rooms gozukmuyor");
+        extentTest.pass("Hotel Room listesi gorunuyor");
         us_007_page.firstHotelRoomDetailBttn.click();
+        extentTest.info("Hotel Room details'a basildi");
         Assert.assertEquals(Driver.getDriver().getTitle(),ConfigReader.getProperty("US_007_EditHotelRoomPageTitleText"),"Edit Hotel Room title gozukmuyor");
+        extentTest.pass("Hotel Room Edit Data saydasi acildi");
         Select select = new Select(us_007_page.idHotelDropdownMenu);
         select.selectByVisibleText(ConfigReader.getProperty("US_007_HotelDropDownSelect"));
+        extentTest.info("HotelDropDown menuden yeni bir secim yapildi");
         ReusableMethods.waitFor(1);
         us_007_page.codeBox.clear();
         us_007_page.nameBox.clear();
@@ -43,7 +48,9 @@ public class TC_0704 extends TestBaseRapor {
         us_007_page.descriptionTextArea.clear();
         us_007_page.maxAdultCountBox.clear();
         us_007_page.maxChildCountBox.clear();
+        extentTest.info("var olan datalar clear() ile temizlendi");
         ReusableMethods.waitFor(1);
+        Faker faker = new Faker();
         Actions actions = new Actions(Driver.getDriver());
         actions.sendKeys(Keys.PAGE_UP,Keys.PAGE_UP).perform();
         actions.sendKeys(us_007_page.codeBox, faker.address().zipCode())
@@ -65,8 +72,10 @@ public class TC_0704 extends TestBaseRapor {
                 .sendKeys(Keys.SPACE)
                 .click(us_007_page.hotelRoomDataSaveBttn)
                 .perform();
+        extentTest.info("Datalar guncellendi");
         ReusableMethods.waitFor(1);
         Assert.assertTrue(us_007_page.hotelRoomUpdateNotifBox.getText().contains(ConfigReader.getProperty("US_007_HotelRoomUpdatedSuccessText")),"kayit basarisiz");
+        extentTest.pass("save edildi");
         Driver.closeDriver();
     }
 }
