@@ -43,4 +43,28 @@ public WebElement kingRoomsButonu;
 
 @FindBy(xpath = "//h2[@class='mb-4']")
 public WebElement kingRoomsYazisiGorundu;
+
+@FindBy(xpath ="(//p[@class='pt-1'])[2]")
+    public WebElement ikinciRoomsbutonu;
+@FindBy(xpath = "(//span[@class='price mr-2'])[2]")
+    public WebElement fiyatBilgisi;
+@FindBy(linkText = "Log in")
+    public WebElement loginYazisiButonu;
+@FindBy(xpath = "//div[@class='col-md-7 heading-section text-center ftco-animate fadeInUp ftco-animated']")
+    public WebElement recentBlogYazisi;
+@FindBy(xpath = "(//h3[@class='heading mt-3'])[1]")
+    public WebElement recentBlogYazisiIlkBlog;
+@FindBy(xpath = "//*[text()='Instagram']")
+    public WebElement instagramYazisi;
+@FindBy(xpath = "(//div[@class='icon d-flex justify-content-center'])[1]")
+    public WebElement InstagramYazisiIlkFotograf;
+@FindBy(id = "navContact")
+    public WebElement contacButonu;
+@FindBy(id = "NameSurname")
+    public WebElement textBoxName;
+@FindBy(xpath = "//input[@value='Send Message']")
+    public WebElement sendMessageButonu;
+
+@FindBy(id = "divMessageResult")
+    public WebElement sendMessageButonuHataYazisi;
 }
