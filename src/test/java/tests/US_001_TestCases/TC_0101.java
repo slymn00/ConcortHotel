@@ -17,16 +17,12 @@ import java.util.concurrent.TimeUnit;
 
 public class TC_0101  {
     US_001_page us_001_page= new US_001_page(Driver.getDriver());
-@BeforeTest
-private void test(){
-    Driver.getDriver().get(ConfigReader.getProperty("US01ConcortHotel"));
 
-
-}
     @Test(priority = 1)
-    public void kullaniciSayfasi() {
+    public void concortHotelSayfasi() {
      //1- kullanici Concort Hotel sayfasina gider
      //expected Result= Rooms butonu gorunur
+        Driver.getDriver().get(ConfigReader.getProperty("US01ConcortHotel"));
 
 Assert.assertTrue(us_001_page.roomsButonu.isDisplayed());
 
@@ -59,11 +55,8 @@ public void concortHotelLogosu() throws InterruptedException {
 
     us_001_page.concortHotelButonu.click();
     Assert.assertTrue(us_001_page.HomeTusu.isDisplayed());
+Driver.closeDriver();
+}
 
-}
-@AfterClass
-    public void TearDown(){
-    Driver.closeDriver();
-}
 
 }
