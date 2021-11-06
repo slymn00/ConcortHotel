@@ -15,12 +15,12 @@ public class TC_0201 extends TestBaseRapor {
     4- Yönetici login butonuna basar.
     5- Title'in admin yazisi icerdigini gorur.
 */
-
     @Test
     public void test() {
 
         ExtentTest extentTest;
         extentTest = extentReports.createTest("TC_0201");
+
         US_002_page us_002_page = new US_002_page();
 
         us_002_page.concortHotelLogin();
