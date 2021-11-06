@@ -21,7 +21,9 @@ public abstract class TestBaseRapor {
         //rapor oluştuktan sonra raporunuz nereye eklensin istiyorsanız buraya yazıyorsunuz.
 
 
-        String filePath = System.getProperty("user.dir") + "test-output/US02_TC02_Rapor.html";
+        String filePath = System.getProperty("user.dir") + "test-output/US02_TC05_Rapor.html";
+
+       // String filePath = System.getProperty("user.dir") + "test-output/US02_TC02_Rapor.html";
 
         //oluşturmak istediğimiz raporu (html formatında) başlatıyoruz, filePath ile dosya yolunu belirliyoruz.
         extentHtmlReporter = new ExtentHtmlReporter(filePath);
@@ -30,14 +32,31 @@ public abstract class TestBaseRapor {
         extentReports.setSystemInfo("Enviroment","QA");
         extentReports.setSystemInfo("Browser", ConfigReader.getProperty("browser")); // chrome, firefox
 
-        extentReports.setSystemInfo("Automation Engineer", "Ferhan");
 
-        extentHtmlReporter.config().setDocumentTitle("Concort Hotel Tests");
+        extentReports.setSystemInfo("Automation Engineer", "Cagatay");
+
+
+
+        extentReports.setSystemInfo("Automation Engineer", "Muhammet Y.");
+
+
+       //extentReports.setSystemInfo("Automation Engineer", "gokhan");
+
+
+        extentReports.setSystemInfo("Automation Engineer", "Huseyin");
+
+        extentHtmlReporter.config().setDocumentTitle("concort Hotel Tests");
+
+        //extentReports.setSystemInfo("Automation Engineer", "Ferhan");
+
+        //extentHtmlReporter.config().setDocumentTitle("Concort Hotel Tests");
+
         extentHtmlReporter.config().setReportName("Concort Hotel Tests");
     }
     // Her test methodundan sonra eğer testte hata varsa, ekran görüntüsü alıp rapora ekliyor
     @AfterMethod(alwaysRun = true)
     public void tearDownMethod(ITestResult result) throws IOException {
+
         if (result.getStatus() == ITestResult.FAILURE) { // eğer testin sonucu başarısızsa
             String screenshotLocation = ReusableMethods.getScreenshot(result.getName());
             extentTest.fail(result.getName());
@@ -46,7 +65,7 @@ public abstract class TestBaseRapor {
         } else if (result.getStatus() == ITestResult.SKIP) { // eğer test çalıştırılmadan geçilmezse
             extentTest.skip("Test Case is skipped: " + result.getName()); // Ignore olanlar
         }
-        Driver.closeDriver();
+       Driver.closeDriver();
     }
 
     // Raporlandırmayı sonlandırmak icin

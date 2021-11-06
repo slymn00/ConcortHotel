@@ -96,6 +96,18 @@ public class US_005_page {
 
     @FindBy (xpath = "//tbody//tr//td[4]")
     public List <WebElement> dördüncüSutunListesi;
+    @FindBy(xpath = "//a[@href='./HotelAdmin/Edit?Id=1024']")
+    public WebElement detailsbutonu;
+    @FindBy(xpath = "(//input[@class='form-control input-lg required'])[1]")
+    public WebElement codeKutusu;
+    @FindBy (xpath = "(//button[@class='btn green'])[1]")
+    public WebElement hotelListsaveButonu;
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement hotelListDeleteButonu;
+    @FindBy(xpath = "//button[@class='btn btn-primary']")
+    public WebElement htmlDeleteOnay;
+    @FindBy (xpath = "//div[@class='bootbox-body']")
+    public WebElement htmlHataYazisi;
 
     public void ConcortHotelLogin(){
         US_005_page us_005_page=new US_005_page();
@@ -110,6 +122,16 @@ public class US_005_page {
         us_005_page.username.sendKeys(ConfigReader.getProperty("US05_gecersizUserName"));
         us_005_page.password.sendKeys(ConfigReader.getProperty("US05_gecersizPassword"));
         us_005_page.loginAccount.click();
+    }
+    public void switchToWindow(String targetTitle) {
+        String origin = Driver.getDriver().getWindowHandle();
+        for (String handle : Driver.getDriver().getWindowHandles()) {
+            Driver.getDriver().switchTo().window(handle);
+            if (Driver.getDriver().getTitle().equals(targetTitle)) {
+                return;
+            }
+        }
+      //  Driver.getDriver().switchTo().window(origin);
     }
 
 }
