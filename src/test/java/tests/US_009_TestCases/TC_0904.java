@@ -60,7 +60,7 @@ public class TC_0904 extends TestBaseRapor {
         extentTest.info("Surname in son hali bir stringe atandi ve yazdirildi");
 
         SoftAssert softAssert=new SoftAssert();
-        softAssert.assertNotEquals(contactSurnameSonHali,contactSurnameSonHali,"Surname nin ilk hali ve son hali ayni, TEST FAILED");
+        softAssert.assertNotEquals(contactSurnameIlkHali,contactSurnameSonHali,"Surname nin ilk hali ve son hali ayni, TEST FAILED");
         extentTest.info("Surname in ilk hali ile save isleminden sonraki son halinin ayni oldugu goruldu ve yapilan degisikligin sisteme islenmedigi anlasildi, TEST FAILED");
 
         softAssert.assertAll();
