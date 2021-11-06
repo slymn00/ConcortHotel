@@ -35,7 +35,7 @@ public class US_007_page {
     @FindBy(xpath = "//span[text()='List Of Hotelrooms']")
     public WebElement listOfHotelRoomsTitleText;
 
-    @FindBy(xpath = "(//a[@class='btn btn-xs default'])[1]")
+    @FindBy(xpath = "(//a[@class='btn btn-xs default'])[2]")
     public WebElement firstHotelRoomDetailBttn;
 
     @FindBy(id = "IDHotel")
@@ -68,11 +68,29 @@ public class US_007_page {
     @FindBy(id = "IsAvailable")
     public WebElement isAvailableBox;
 
+    @FindBy(xpath = "(//button[text()='Save'])[1]")
+    public WebElement hotelRoomDataSaveBttn;
+
+    @FindBy(xpath = "(//li[@class='credit ui-draggable ui-draggable-handle'])[1]")
+    public WebElement dragPrice200;
+
+    @FindBy(xpath = "//div[@class='bootbox-body']")
+    public WebElement hotelRoomUpdateNotifBox;
+
+    @FindBy(id = "btnDelete")
+    public WebElement hotelRoomDetailsDeleteBttn;
+
+    @FindBy(xpath = "//button[@data-bb-handler='cancel']")
+    public WebElement deleteNotifCancelBttn;
+
+    @FindBy(xpath = "//button[@data-bb-handler='confirm']")
+    public WebElement deleteNotifConfirmBttn;
+
     public void login(){
         Driver.getDriver().get(ConfigReader.getProperty("US_007_MainPageUrl"));
         loginBttn.click();
-        usernameTextBox.sendKeys(ConfigReader.getProperty("us010_chotel_username"));
-        passwordTextBox.sendKeys(ConfigReader.getProperty("us010_chotel_password"));
+        usernameTextBox.sendKeys(ConfigReader.getProperty("US_007_AdminUsername"));
+        passwordTextBox.sendKeys(ConfigReader.getProperty("US_007_AdminPassword"));
         loginPageLoginBttn.click();
     }
 

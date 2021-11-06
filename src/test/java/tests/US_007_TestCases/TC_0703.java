@@ -37,5 +37,6 @@ public class TC_0703 extends TestBaseRapor {
                 &&us_007_page.maxAdultCountBox.isEnabled()
                 &&us_007_page.maxChildCountBox.isEnabled()
                 &&us_007_page.isAvailableBox.isEnabled(),"DropMenu Unenabled");
+        Driver.closeDriver();
     }
 }

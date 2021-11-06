@@ -43,5 +43,6 @@ public class TC_0701 extends TestBaseRapor {
 
         us_007_page.HotelRoomsBttn.click();
         Assert.assertTrue(us_007_page.listOfHotelRoomsTitleText.isDisplayed(),"List of Hotel Rooms gozukmuyor");
+        Driver.closeDriver();
     }
 }
