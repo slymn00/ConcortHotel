@@ -1,5 +1,4 @@
 package smokeTests;
-
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.LogIn_Page;
