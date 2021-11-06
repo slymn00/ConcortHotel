@@ -28,10 +28,28 @@ public class US_004_page {
     @FindBy(xpath = "//span[text()='Hotel Management']")
     public WebElement hotelManagementLinki;
 
+    @FindBy(partialLinkText = "Hotel List")
+    public WebElement hotelListLink;
+
     @FindBy(xpath = "//span[text()='Add Hotel ']")
     public WebElement addHotelLink;
 
-    @FindBy(partialLinkText = "Hotel List")
-    public WebElement hotelListLink;
+    @FindBy(xpath="//input[@id='Code']")
+    public WebElement addHotelCodeKutusu;
+
+    @FindBy(id="IDGroup")
+    public WebElement addHotelDropdown;
+
+    @FindBy(id="btnSubmit")
+    public WebElement addHotelSave;
+
+    @FindBy(xpath="//button[@class='btn btn-primary']")
+    public WebElement hoteleklendibutonu;
+
+
+
+
+
+
 
 }

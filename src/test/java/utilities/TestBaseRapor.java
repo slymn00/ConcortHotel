@@ -21,7 +21,12 @@ public abstract class TestBaseRapor {
         //rapor oluştuktan sonra raporunuz nereye eklensin istiyorsanız buraya yazıyorsunuz.
 
 
-        String filePath = System.getProperty("user.dir") + "test-output/US02_TC02_Rapor.html";
+
+        String filePath = System.getProperty("user.dir") + "/test-output/US004_TC0403_Rapor.html";
+
+
+       // String filePath = System.getProperty("user.dir") + "test-output/US02_TC02_Rapor.html";
+
 
         //oluşturmak istediğimiz raporu (html formatında) başlatıyoruz, filePath ile dosya yolunu belirliyoruz.
         extentHtmlReporter = new ExtentHtmlReporter(filePath);
@@ -30,9 +35,16 @@ public abstract class TestBaseRapor {
         extentReports.setSystemInfo("Enviroment","QA");
         extentReports.setSystemInfo("Browser", ConfigReader.getProperty("browser")); // chrome, firefox
 
+
+        extentReports.setSystemInfo("Automation Engineer", "gokhan");
+
+
+        extentHtmlReporter.config().setDocumentTitle("concort Hotel Tests");
+
         extentReports.setSystemInfo("Automation Engineer", "Ferhan");
 
         extentHtmlReporter.config().setDocumentTitle("Concort Hotel Tests");
+
         extentHtmlReporter.config().setReportName("Concort Hotel Tests");
     }
     // Her test methodundan sonra eğer testte hata varsa, ekran görüntüsü alıp rapora ekliyor
