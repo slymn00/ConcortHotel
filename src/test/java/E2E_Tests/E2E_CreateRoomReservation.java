@@ -8,15 +8,21 @@ import org.testng.annotations.Test;
 import pages.LogIn_Page;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.TestBaseRapor;
 
-public class E2E_CreateRoomReservation {
+public class E2E_CreateRoomReservation extends TestBaseRapor {
     @Test(groups = "e2e")
     public void addRoomReservation() throws InterruptedException {
+        extentTest=extentReports.createTest("Reservasyon testi","Kullanici sorunsuz bir sekilde reservasyon yapabilecek");
         LogIn_Page logIn_page=new LogIn_Page();
         logIn_page.login();
+        extentTest.info("Giris yapildi");
         logIn_page.hotelManagement.click();
+        extentTest.info("Hotel management'a tiklandi");
         logIn_page.roomReservation.click();
+        extentTest.info("Room reservation butonuna tiklandi");
         logIn_page.addRoomReservation.click();
+        extentTest.info("Reservasyon ekle butonuna tiklandi");
         Select select=new Select(logIn_page.addRoomReservationSelectUserDdown);
         select.selectByVisibleText(ConfigReader.getProperty("chotel_roomreservation_user"));
         Select select1=new Select(logIn_page.addRoomReservationSelectHotelroomDdown);
@@ -38,7 +44,9 @@ public class E2E_CreateRoomReservation {
         actions.click(logIn_page.roomReservationApprovedButton)
                 .click(logIn_page.addRoomReservationSaveButton).perform();
         Thread.sleep(2000);
+        extentTest.info("Textboxlar dolduruldu");
         Assert.assertTrue(logIn_page.addRoomReservationSuccessfullySaveText.isDisplayed());
+        extentTest.pass("Basarili bir sekilde kayit yapildi");
         logIn_page.addRoomReservationLastOk.click();
         Driver.closeDriver();
 

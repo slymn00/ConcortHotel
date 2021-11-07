@@ -8,14 +8,18 @@ import org.testng.annotations.Test;
 import pages.LogIn_Page;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.TestBaseRapor;
 
-public class E2E_CreateUser {
+public class E2E_CreateUser extends TestBaseRapor {
 
     @Test(groups = "e2e")
     public void e2e_adduserTest() throws InterruptedException {
+        extentTest=extentReports.createTest("User Testi","Kullanici sorunsuz bir sekilde user ekleyebilmeli");
         LogIn_Page logIn_page=new LogIn_Page();
         logIn_page.login();
+        extentTest.info("Giris yapildi");
         logIn_page.addUserButton.click();
+        extentTest.info("User button'a tiklandi");
         Actions actions=new Actions(Driver.getDriver());
         actions.sendKeys(logIn_page.addUserUsernameBox, ConfigReader.getProperty("chotel_username"))
                 .sendKeys(Keys.TAB+ConfigReader.getProperty("chotel_password"))
@@ -39,11 +43,14 @@ public class E2E_CreateUser {
         Select select1=new Select(logIn_page.addUserRoleDdown);
         select1.selectByVisibleText(ConfigReader.getProperty("chotel_adduser_Role"));
         logIn_page.addUserYes.click();
+        extentTest.info("Gerekli textboxlar dolduruldu");
         logIn_page.addUserSaveButton.click();
         Thread.sleep(2000);
         Assert.assertTrue(logIn_page.addUserSuccessfullySaveText.isDisplayed());
+        extentTest.pass("Basarili bir sekilde user olusturuldu");
         logIn_page.addUserLastOk.click();
         Driver.closeDriver();
+
 
 
 

@@ -1,6 +1,6 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name="group calistirma">
-    <test name="smokeTest">
+    <test name="e2etest">
         <groups>
             <run>
                 <include name="e2e"/>
